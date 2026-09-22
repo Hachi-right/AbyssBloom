@@ -11,9 +11,11 @@
 /[Mm]emoryCaptures/
 /[Rr]ecordings/
 
-# ---------- 构建产物（保留目录占位，内容忽略）----------
-/Builds/*
-!/Builds/.gitkeep
+# ---------- 构建产物（保留目录骨架，内容忽略）----------
+/Builds/**
+!/Builds/
+!/Builds/**/
+!/Builds/**/.gitkeep
 
 # ---------- Asset Store 导入的包 ----------
 /[Aa]ssets/AssetStoreTools*

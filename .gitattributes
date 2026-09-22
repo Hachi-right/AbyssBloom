@@ -1,0 +1,66 @@
+# ==========================================================
+# AbyssBloom — Git 属性配置
+# 作用：规范换行符、标记二进制文件、为 Unity YAML 提供正确的 diff
+# ==========================================================
+
+# 默认：由 git 自动判断文本/二进制，统一以 LF 入库并保持工作区一致
+# （Unity 项目统一 LF 可避免跨平台换行符噪声污染 YAML 资源的 diff）
+* text=auto eol=lf
+
+# ---------- 文本文件 ----------
+*.cs        text diff=csharp
+*.shader    text
+*.cginc     text
+*.hlsl      text
+*.json      text
+*.xml       text
+*.md        text
+*.txt       text
+*.yml       text
+*.yaml      text
+*.asmdef    text
+*.gitignore text
+
+# ---------- Unity YAML 资源（是文本，但交给 UnityYAMLMerge 处理更安全）----------
+# 提示：在 Assets 中开启 Edit > Project Settings > Editor > Asset Serialization = Force Text
+*.unity     merge=unityyamlmerge eol=lf
+*.prefab    merge=unityyamlmerge eol=lf
+*.asset     merge=unityyamlmerge eol=lf
+*.meta      merge=unityyamlmerge eol=lf
+*.mat       merge=unityyamlmerge eol=lf
+*.anim      merge=unityyamlmerge eol=lf
+*.controller merge=unityyamlmerge eol=lf
+
+# ---------- 二进制文件 ----------
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.psd   binary
+*.tga   binary
+*.exr   binary
+*.hdr   binary
+*.fbx   binary
+*.blend binary
+*.wav   binary
+*.mp3   binary
+*.ogg   binary
+*.ttf   binary
+*.otf   binary
+*.dll   binary
+*.so    binary
+*.dylib binary
+*.apk   binary
+*.aab   binary
+*.unitypackage binary
+
+# ==========================================================
+# 可选：配置 UnityYAMLMerge（让 Unity 场景/预制体冲突可自动合并）
+# 在仓库内执行一次（路径按你的 Unity 安装位置调整）：
+#
+#   git config merge.unityyamlmerge.name "Unity SmartMerge"
+#   git config merge.unityyamlmerge.driver \
+#     '"D:/unity/6000.0.51f1/Editor/Data/Tools/UnityYAMLMerge.exe" merge -p %O %B %A %A'
+#
+# 注意：这只能减少冲突，不能替代「同一场景同一时间只由一人编辑」的纪律。
+# ==========================================================

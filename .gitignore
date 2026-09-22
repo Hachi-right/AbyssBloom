@@ -1,0 +1,57 @@
+# ==========================================================
+# AbyssBloom — Unity 6 版本控制忽略规则
+# ==========================================================
+
+# ---------- Unity 自动生成目录（绝不入库）----------
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# ---------- 构建产物（保留目录占位，内容忽略）----------
+/Builds/*
+!/Builds/.gitkeep
+
+# ---------- Asset Store 导入的包 ----------
+/[Aa]ssets/AssetStoreTools*
+/[Aa]ssets/Plugins/Editor/JetBrains*
+
+# ---------- IDE 缓存与工程文件 ----------
+.vs/
+.idea/
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# ---------- Unity 生成的相关文件 ----------
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+sysinfo.txt
+
+# ---------- 打包文件 ----------
+*.apk
+*.aab
+*.unitypackage
+*.app
+crashlytics-build.properties
+
+# ---------- 操作系统与编辑器杂物 ----------
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp

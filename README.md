@@ -74,7 +74,7 @@
 
 | 路径 | 用途 |
 | --- | --- |
-| `Design/GDD/` | 策划案、玩法设计文档 |
+| `Design/GDD/` | 策划案、玩法设计文档。<br>**读取顺序**：`glossary.md`（术语，先读）→ `narrative-brief.md`（叙事一页纸）→ `narrative-design-framework.md`（叙事展开）→ `game-design.md`（玩法）→ `world-setting.md`（**已降级**为美术氛围参考，与 GDD 冲突处以 GDD 为准） |
 | `Design/Balance/` | 数值平衡表（Excel / 表格文件） |
 | `Design/Prototype/` | 玩法原型、纸面原型、参考拆解 |
 | `Design/Reference/` | 竞品截图、灵感收集 |
